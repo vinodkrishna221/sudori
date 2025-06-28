@@ -1,0 +1,154 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-saffron-500 to-terracotta-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200 hover:scale-105 cursor-pointer;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-saffron-500 text-saffron-600 font-semibold rounded-xl hover:bg-saffron-50 transition-all duration-200 cursor-pointer;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 text-warm-gray-700 font-semibold rounded-xl hover:bg-warm-gray-100 transition-all duration-200 cursor-pointer;
+  }
+  
+  .card-elevated {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #f4a950 0%, #e07a47 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .mandala-bg {
+    background: radial-gradient(circle at 25% 25%, rgba(244, 169, 80, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(224, 122, 71, 0.05) 0%, transparent 50%);
+  }
+  
+  .paisley-accent {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 45c8.284 0 15-6.716 15-15s-6.716-15-15-15-15 6.716-15 15 6.716 15 15 15z' fill='%23f4a950' fill-opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Add dashboard specific utility classes */
+  .mandala-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23FF6B35' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+  }
+  
+  .paisley-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 5c8 0 15 7 15 15s-7 15-15 15-15-7-15-15 7-15 15-15z' fill='none' stroke='%23A23B72' stroke-width='0.3' opacity='0.08'/%3E%3C/svg%3E");
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
