@@ -1,0 +1,21 @@
+[build]
+  # This is the command Netlify will run to build your site.
+  # It uses the "build" script from your package.json
+  command = "npm run build"
+  # This is the directory Netlify will deploy. Vite outputs to 'dist' by default.
+  publish = "dist"
+
+[build.environment]
+  # Set the Node.js version. Adjust this to the version you use locally
+  # or the version your project requires. Common choices are 16, 18, or 20.
+  # Check your local version with `node -v`
+  # Example: NODE_VERSION = "18.17.0"
+  # NODE_VERSION = "20" # Using a recent LTS version as a general recommendation
+
+# Redirects and rewrites rule for Single Page Applications (SPA)
+# This ensures that direct navigation to routes like /about or /products/123
+# are handled by your client-side router (React Router) by serving index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
